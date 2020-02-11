@@ -11,7 +11,7 @@ public class MapPlacement : MonoBehaviour
     public Color highlightTile;
     private Renderer tileRender;
     private Color defaultTileColor;
-    private GameObject turret;
+    public GameObject turret;
     BuildMechanics buildMechanics;
     
     void Start()
@@ -20,14 +20,19 @@ public class MapPlacement : MonoBehaviour
         tileRender = GetComponent<Renderer>();
         defaultTileColor = tileRender.material.color;
     }
+    public Vector3 GetBuildPosition()
+    {
+        return transform.position + offset;
+    }
    void OnMouseEnter()
    {
        if(EventSystem.current.IsPointerOverGameObject())
        {
            return;
        }
-       if(buildMechanics.BuildTurret()==null)
+       if(!buildMechanics.CheckBuild)
        {
+           Debug.Log("CANT BUILD HERE!");
            return;
        }
        tileRender.material.color = highlightTile;
@@ -42,8 +47,9 @@ public class MapPlacement : MonoBehaviour
        {
            return;
        }
-       if(buildMechanics.BuildTurret()==null)
+       if(!buildMechanics.CheckBuild)
        {
+           Debug.Log("CANT BUILD HERE!");
            return;
        }
        if(turret!=null)
@@ -51,8 +57,7 @@ public class MapPlacement : MonoBehaviour
            Debug.Log("Tile is Busy");
            return;
        }
-    GameObject choosenTurret = BuildMechanics.instance.BuildTurret();
-    turret = (GameObject)Instantiate(choosenTurret,transform.position+offset,transform.rotation);
+    buildMechanics.BuildTurretOn(this);
 
    }
 

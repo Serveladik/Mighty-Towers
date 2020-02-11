@@ -4,20 +4,22 @@ using UnityEngine;
 
 public class Shop : MonoBehaviour
 {
+    public TurretTemplate standartTurret;
+    public TurretTemplate splashTurret;
     BuildMechanics buildMechanics;
     void Start()
     {
         buildMechanics = BuildMechanics.instance;
     }
-    public void BuyFirstTurret()
+    public void BuyStandartTurret()
     {
         //Debug.Log("FIrstBOUGHT");
-        buildMechanics.ChooseTurretToBuy(buildMechanics.standartPrefab);
+        buildMechanics.ChooseTurretToBuy(standartTurret);
     }
     public void BuySplashTurret()
     {
         //Debug.Log("SplashBOUGHT");
-        buildMechanics.ChooseTurretToBuy(buildMechanics.splashPrefab);
+        buildMechanics.ChooseTurretToBuy(splashTurret);
     }
     public void BuyAirTurret()
     {

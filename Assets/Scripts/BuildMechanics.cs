@@ -9,6 +9,7 @@ public class BuildMechanics : MonoBehaviour
     public GameObject standartPrefab;
     public GameObject splashPrefab;
     public static BuildMechanics instance;
+    private TurretTemplate turretTemplate;
     void Awake()
     {
         if(instance !=null)
@@ -23,12 +24,21 @@ public class BuildMechanics : MonoBehaviour
     {
         
     }
-    public GameObject BuildTurret()
+    public bool CheckBuild {get {return  turretTemplate != null;}}
+    public void BuildTurretOn(MapPlacement map)
     {
-        return choosenTurret;
+        if(PlayerStats.money < turretTemplate.price)
+        {
+           Debug.Log("Not enough money!");
+        }
+        PlayerStats.money -=turretTemplate.price;
+
+        GameObject turret = (GameObject) Instantiate(turretTemplate.turretPrefab,map.GetBuildPosition(),Quaternion.identity);
+        map.turret = turret;
+        
     }
-    public void ChooseTurretToBuy(GameObject turret)
+    public void ChooseTurretToBuy(TurretTemplate turret)
     {
-        choosenTurret = turret;
+        turretTemplate = turret;
     }
 }

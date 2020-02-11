@@ -3702,6 +3702,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 740149dd9fc82cb4ca933a3773acf170, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  standartTurret:
+    turretPrefab: {fileID: 5708615121423558785, guid: 447a7048ab4f77e4fab5a04d95611c0a,
+      type: 3}
+    price: 45
+  splashTurret:
+    turretPrefab: {fileID: 8777230618955846314, guid: 42e356c24318e1b4ea21082074d3a14f,
+      type: 3}
+    price: 60
 --- !u!1 &1191148838
 GameObject:
   m_ObjectHideFlags: 0
@@ -4057,6 +4065,7 @@ GameObject:
   - component: {fileID: 1985750822}
   - component: {fileID: 1985750821}
   - component: {fileID: 1985750823}
+  - component: {fileID: 1985750824}
   m_Layer: 0
   m_Name: GameMechanics
   m_TagString: Untagged
@@ -4110,6 +4119,19 @@ MonoBehaviour:
     type: 3}
   splashPrefab: {fileID: 8777230618955846314, guid: 42e356c24318e1b4ea21082074d3a14f,
     type: 3}
+--- !u!114 &1985750824
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1985750820}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31e949e74421aa142aac20f62d4b752b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startMoney: 100
 --- !u!1001 &7216766641736658112
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4209,7 +4231,7 @@ PrefabInstance:
     - target: {fileID: 7364414090209937976, guid: 332ddea0ac2d1b54c972f9027eea94b7,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: BuyFirstTurret
+      value: BuyStandartTurret
       objectReference: {fileID: 0}
     - target: {fileID: 7364414090209937976, guid: 332ddea0ac2d1b54c972f9027eea94b7,
         type: 3}
