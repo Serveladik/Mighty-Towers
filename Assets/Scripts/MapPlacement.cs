@@ -35,7 +35,16 @@ public class MapPlacement : MonoBehaviour
            Debug.Log("CANT BUILD HERE!");
            return;
        }
-       tileRender.material.color = highlightTile;
+
+       if(buildMechanics.CheckMoney)
+       {
+           tileRender.material.color = highlightTile;
+       }
+       else
+       {
+           tileRender.material.color = Color.red;
+       }
+       
    }
    void OnMouseExit()
    {

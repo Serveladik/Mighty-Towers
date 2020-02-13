@@ -58,7 +58,7 @@ public class TurretAttack : MonoBehaviour
 
    void Shoot()
    {
-       if(fireTimer<=0f)
+       if(fireTimer<=0f && target!=null)
        {
            GameObject bulletGO = (GameObject)Instantiate(bulletPrefab,bulletSpawn.position,bulletSpawn.rotation);
            Bullet bullet = bulletGO.GetComponent<Bullet>();

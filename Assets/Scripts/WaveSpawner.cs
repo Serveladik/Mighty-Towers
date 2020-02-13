@@ -34,7 +34,7 @@ public Text waveText;
     if(waveTimer>=0)
     {
         waveTimer-=Time.deltaTime;
-        waveText.text = "Next Wave: " + waveTimer.ToString("#").PadLeft(1, '0');
+        waveText.text = "Next Wave: " + string.Format("{0:00.00}",waveTimer);
     }
     
     
