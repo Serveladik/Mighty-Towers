@@ -47,7 +47,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 1.2
-  m_Speed: 50
+  m_Speed: 15
   m_Acceleration: 8000
   avoidancePriority: 1
   m_AngularSpeed: 10000
@@ -71,6 +71,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 141013d7de814e24aaed1e02490f5beb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bounty: 10
+  speed: 0
+  health: 100
+  enemyMat: {fileID: 2100000, guid: 8f44dc1b047b6bc43af16051898b973e, type: 2}
+  deathVFX: {fileID: 2728957680003199646, guid: 67ee010bc078c2f419e9c872b73a65d0,
+    type: 3}
+  deathEffect: {fileID: 6372331870818812798, guid: 66bd27f049d635a4191934777ccab229,
+    type: 3}
 --- !u!54 &2840422674204298372
 Rigidbody:
   m_ObjectHideFlags: 0

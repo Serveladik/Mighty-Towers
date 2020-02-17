@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
+    public int damage = 50;
     private Transform enemy;
     public float speed=80f;
     public float splashRange = 0f;
@@ -40,9 +41,9 @@ public class Bullet : MonoBehaviour
         }
         else
         {
-            SplashDamage(enemy);
+            hitDamage(enemy);
         }
-        Destroy(enemy.gameObject);
+        //Destroy(enemy.gameObject);
         Destroy(gameObject);
         
         
@@ -54,13 +55,19 @@ public class Bullet : MonoBehaviour
         {
             if(splashTragets.tag =="Enemy")
             {
-                SplashDamage(splashTragets.transform);
+                hitDamage(splashTragets.transform);
             }
         }
     }
-    void SplashDamage(Transform enemy)
+    void hitDamage(Transform enemy)
     {
-        Destroy(enemy.gameObject);
+        EnemyTarget e = enemy.GetComponent<EnemyTarget>();
+        
+        if(e!=null)
+        {
+            e.TakeDamage(damage);
+        }
+        //Destroy(enemy.gameObject);
     }
     void OnDrawGizmosSelected()
     {
