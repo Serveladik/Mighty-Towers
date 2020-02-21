@@ -8,12 +8,16 @@ public class TurretAttack : MonoBehaviour
     public Transform target;
     public float rotationSpeed=100f;
     float shortestDistance = Mathf.Infinity;
+    [Header("Default bullets")]
     public GameObject bulletPrefab;
     public Transform bulletSpawn;
     [Header("Turret Stats")]
     public float range = 15f;
     public float fireSpeed =1f;
     private float fireTimer=0f;
+    [Header("Laser Stats")]
+    public bool useLaser=false;
+    public LineRenderer lineRenderer;
     void Start()
     {
         turret = GetComponent<Transform>();
@@ -21,12 +25,14 @@ public class TurretAttack : MonoBehaviour
     }
     void Update()
     {
+        
         Shoot();
         LookAtEnemy();
     }
     void SearchTarget()
     {
         
+
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
         GameObject nearestEnemy=null;
         shortestDistance = Mathf.Infinity;
@@ -50,7 +56,9 @@ public class TurretAttack : MonoBehaviour
         }
         else
         {
+            
             target=null;
+            
         }
        
         
@@ -58,17 +66,39 @@ public class TurretAttack : MonoBehaviour
 
    void Shoot()
    {
-       if(fireTimer<=0f && target!=null)
+       if(useLaser==true)
        {
-           GameObject bulletGO = (GameObject)Instantiate(bulletPrefab,bulletSpawn.position,bulletSpawn.rotation);
-           Bullet bullet = bulletGO.GetComponent<Bullet>();
-           if(bullet!=null)
-           {
-               bullet.Seeking(target);
-           }
-           fireTimer=1f/fireSpeed;   
+           Laser();
+       }
+       else
+        {
+            if(fireTimer<=0f && target!=null)
+            {
+                GameObject bulletGO = (GameObject)Instantiate(bulletPrefab,bulletSpawn.position,bulletSpawn.rotation);
+                Bullet bullet = bulletGO.GetComponent<Bullet>();
+                if(bullet!=null)
+                {
+                    bullet.Seeking(target);
+                }
+                fireTimer=1f/fireSpeed;   
+            }
        }
        fireTimer-=Time.deltaTime;
+   }
+   void Laser()
+   {
+       //if(!lineRenderer.enabled)
+       if(target!=null)
+       {
+        lineRenderer.enabled=true;
+        lineRenderer.SetPosition(0,bulletSpawn.position);
+        lineRenderer.SetPosition(1,target.position);
+       }
+        
+        else
+        {
+            lineRenderer.enabled=false;
+        }
    }
     void OnDrawGizmosSelected()
     {
@@ -87,5 +117,6 @@ public class TurretAttack : MonoBehaviour
             turret.transform.LookAt(targetPostition);
             //turret.transform.rotation = Quaternion.RotateTowards(transform.rotation,Quaternion.LookRotation(nearestEnemy.transform.position),Time.deltaTime*rotationSpeed);
         }
+       
     }
 }

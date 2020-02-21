@@ -6,6 +6,8 @@ public class Shop : MonoBehaviour
 {
     public TurretTemplate standartTurret;
     public TurretTemplate splashTurret;
+    public TurretTemplate laserTurret;
+
     BuildMechanics buildMechanics;
     void Start()
     {
@@ -13,13 +15,17 @@ public class Shop : MonoBehaviour
     }
     public void BuyStandartTurret()
     {
-        //Debug.Log("FIrstBOUGHT");
+        
         buildMechanics.ChooseTurretToBuy(standartTurret);
     }
     public void BuySplashTurret()
     {
-        //Debug.Log("SplashBOUGHT");
+        
         buildMechanics.ChooseTurretToBuy(splashTurret);
+    }
+    public void BuyLaserTurret()
+    {
+       buildMechanics.ChooseTurretToBuy(laserTurret);
     }
     public void BuyAirTurret()
     {

@@ -9,7 +9,7 @@ public class EnemyTarget : MonoBehaviour
     public int speed;
     public int health=100;
     private Material enemyMat;
-    private GameObject enemy;
+    public GameObject enemy;
     public ParticleSystem deathVFX;
     public GameObject deathEffect;
     //public GameObject endBase;
@@ -19,8 +19,9 @@ public class EnemyTarget : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        enemyMat = gameObject.GetComponentInChildren<Renderer>().material;
-        navMesh = GetComponent<NavMeshAgent>();
+        
+        enemyMat = gameObject.GetComponentInParent<Renderer>().material;
+        navMesh = GetComponentInParent<NavMeshAgent>();
         navMesh.speed = speed;
        
     }
@@ -46,7 +47,7 @@ public class EnemyTarget : MonoBehaviour
         deathVFX.GetComponent<ParticleSystemRenderer>().material = enemyMat;
         GameObject deathFX = (GameObject)Instantiate(deathEffect,transform.position,Quaternion.identity);
         Destroy(deathFX,2f);
-        Destroy(this.gameObject);
+        Destroy(this.enemy);
     }
     public void OnTriggerEnter(Collider deadZone)
     {
