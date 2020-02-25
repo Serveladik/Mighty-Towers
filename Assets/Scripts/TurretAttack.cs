@@ -18,6 +18,7 @@ public class TurretAttack : MonoBehaviour
     [Header("Laser Stats")]
     public bool useLaser=false;
     public LineRenderer lineRenderer;
+    public ParticleSystem laserEffect;
     void Start()
     {
         turret = GetComponent<Transform>();
@@ -91,13 +92,21 @@ public class TurretAttack : MonoBehaviour
        if(target!=null)
        {
         lineRenderer.enabled=true;
+        laserEffect.Play();
+
         lineRenderer.SetPosition(0,bulletSpawn.position);
         lineRenderer.SetPosition(1,target.position);
+
+        //Vector3 laserDir = bulletSpawn.position - target.position;
+        
+        laserEffect.transform.position = target.position;
+        //laserEffect.transform.rotation = Quaternion.LookRotation(laserDir);
        }
         
         else
         {
             lineRenderer.enabled=false;
+            laserEffect.Stop();
         }
    }
     void OnDrawGizmosSelected()
@@ -113,7 +122,7 @@ public class TurretAttack : MonoBehaviour
                 target.position.x, 
                 this.transform.position.y, 
                 target.position.z);
-            Debug.DrawLine(transform.position,target.transform.position,Color.red,1f);
+            //Debug.DrawLine(transform.position,target.transform.position,Color.red,1f);
             turret.transform.LookAt(targetPostition);
             //turret.transform.rotation = Quaternion.RotateTowards(transform.rotation,Quaternion.LookRotation(nearestEnemy.transform.position),Time.deltaTime*rotationSpeed);
         }
