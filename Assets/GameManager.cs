@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     {
         if(gameOver==true)
         return;
+        
         if(PlayerStats.lives <=0)
         {
             GameOver();

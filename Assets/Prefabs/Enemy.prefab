@@ -9,7 +9,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3619327396896576218}
+  - component: {fileID: 2414819989686213026}
+  - component: {fileID: 2477953420713298711}
   - component: {fileID: 690980308}
+  - component: {fileID: 512650039411718759}
   m_Layer: 0
   m_Name: Target1
   m_TagString: Enemy
@@ -31,6 +34,38 @@ Transform:
   m_Father: {fileID: 8132675195078120793}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!64 &2414819989686213026
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2761062900701711697}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 1
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 0}
+--- !u!143 &2477953420713298711
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2761062900701711697}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Height: 2
+  m_Radius: 0.5
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &690980308
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44,13 +79,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bounty: 10
-  speed: 15
   health: 100
   enemy: {fileID: 2840422674204298393}
   deathVFX: {fileID: 8589117891853693392, guid: dc5ec3063537e574ab06b1b359b9716e,
     type: 3}
   deathEffect: {fileID: 6372331870818812798, guid: 66bd27f049d635a4191934777ccab229,
     type: 3}
+--- !u!114 &512650039411718759
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2761062900701711697}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ad8580ca9c85de4db40b0be2e426b47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 50
+  enemyObject: {fileID: 2840422674204298393}
 --- !u!1 &2840422674204298393
 GameObject:
   m_ObjectHideFlags: 0
@@ -63,7 +111,6 @@ GameObject:
   - component: {fileID: 2840422674204298370}
   - component: {fileID: 2840422674204298372}
   - component: {fileID: 2840422674204298375}
-  - component: {fileID: 2840422674204298374}
   - component: {fileID: -7613317118246864758}
   m_Layer: 0
   m_Name: Enemy
@@ -137,20 +184,6 @@ MeshCollider:
   m_Enabled: 1
   serializedVersion: 3
   m_Convex: 0
-  m_CookingOptions: 14
-  m_Mesh: {fileID: 0}
---- !u!64 &2840422674204298374
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2840422674204298393}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 1
   m_CookingOptions: 14
   m_Mesh: {fileID: 0}
 --- !u!143 &-7613317118246864758

@@ -5,34 +5,25 @@ using UnityEngine.AI;
 
 public class EnemyTarget : MonoBehaviour
 {
+    [HideInInspector]
+    public float speed=10f;
     public int bounty = 10;
-    public int speed;
-    public int health=100;
-    private Material enemyMat;
+    public float health=100;
+    public float startSpeed =10;
     public GameObject enemy;
     public ParticleSystem deathVFX;
     public GameObject deathEffect;
     //public GameObject endBase;
-    NavMeshAgent navMesh;
-    Transform target;
-
-    // Start is called before the first frame update
+    private Material enemyMat;
     void Start()
     {
-        
-        enemyMat = gameObject.GetComponentInParent<Renderer>().material;
-        navMesh = GetComponentInParent<NavMeshAgent>();
-        navMesh.speed = speed;
-       
+        speed = startSpeed;
+        enemyMat = gameObject.GetComponentInParent<Renderer>().material; 
     }
 
-    // Update is called once per frame
-    void Update()
+    public void TakeDamage(float damage)
     {
-        navMesh.SetDestination(GameObject.FindGameObjectWithTag("EndBase").transform.position);
-    }
-    public void TakeDamage(int damage)
-    {
+        Debug.Log("SPEED: " + speed);
         health-=damage;
         if(health<=0)
         {
@@ -40,6 +31,11 @@ public class EnemyTarget : MonoBehaviour
             Die();
         }
 
+    }
+    public void Slow(float slowing)
+    {
+        speed = startSpeed * (1f-slowing);
+        
     }
     void Die()
     {
@@ -49,14 +45,6 @@ public class EnemyTarget : MonoBehaviour
         Destroy(deathFX,2f);
         Destroy(this.enemy);
     }
-    public void OnTriggerEnter(Collider deadZone)
-    {
-        if(deadZone.gameObject.tag=="EndBase")
-        {
-            PlayerStats.lives-=1;
-            GameObject.Destroy(this.gameObject);
-            Debug.Log("DEAD");
-        }
-    }
+   
     
 }

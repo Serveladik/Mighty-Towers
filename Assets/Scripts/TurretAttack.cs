@@ -6,6 +6,7 @@ public class TurretAttack : MonoBehaviour
 {
     public Transform turret;
     public Transform target;
+    private EnemyTarget targetEnemy;
     public float rotationSpeed=100f;
     float shortestDistance = Mathf.Infinity;
     [Header("Default bullets")]
@@ -17,6 +18,8 @@ public class TurretAttack : MonoBehaviour
     private float fireTimer=0f;
     [Header("Laser Stats")]
     public bool useLaser=false;
+    public int damageOverTime = 30;
+    public float slow=10f;
     public LineRenderer lineRenderer;
     public ParticleSystem laserEffect;
     void Start()
@@ -45,6 +48,7 @@ public class TurretAttack : MonoBehaviour
             {
                 shortestDistance=distanceToEnemy; 
                 nearestEnemy=enemy;
+                targetEnemy = nearestEnemy.GetComponent<EnemyTarget>();
                 
             }
         }
@@ -88,9 +92,13 @@ public class TurretAttack : MonoBehaviour
    }
    void Laser()
    {
+       
        //if(!lineRenderer.enabled)
        if(target!=null)
        {
+        targetEnemy.GetComponent<EnemyTarget>().TakeDamage(damageOverTime * Time.deltaTime);
+        targetEnemy.Slow(slow);
+        
         lineRenderer.enabled=true;
         laserEffect.Play();
 
@@ -105,9 +113,14 @@ public class TurretAttack : MonoBehaviour
         
         else
         {
+            targetEnemy.speed = targetEnemy.startSpeed;
             lineRenderer.enabled=false;
             laserEffect.Stop();
         }
+   }
+   void Slow()
+   {
+
    }
     void OnDrawGizmosSelected()
     {
