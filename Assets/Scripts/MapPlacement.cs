@@ -56,14 +56,15 @@ public class MapPlacement : MonoBehaviour
        {
            return;
        }
-       if(!buildMechanics.CheckBuild)
-       {
-           Debug.Log("CANT BUILD HERE!");
-           return;
-       }
        if(turret!=null)
        {
            Debug.Log("Tile is Busy");
+           buildMechanics.SelectedPlace(this);
+           return;
+       }
+       if(!buildMechanics.CheckBuild)
+       {
+           Debug.Log("CANT BUILD HERE!");
            return;
        }
     buildMechanics.BuildTurretOn(this);

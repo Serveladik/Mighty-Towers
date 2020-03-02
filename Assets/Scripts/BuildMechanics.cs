@@ -10,7 +10,9 @@ public class BuildMechanics : MonoBehaviour
     public GameObject splashPrefab;
     public static BuildMechanics instance;
     private TurretTemplate turretTemplate;
+    private MapPlacement selectedPlace;
     public GameObject buildEffect;
+    public MapUI mapUI;
     void Awake()
     {
         if(instance !=null)
@@ -43,8 +45,26 @@ public class BuildMechanics : MonoBehaviour
         GameObject buildEffectInst = (GameObject)Instantiate(buildEffect,map.GetBuildPosition(), Quaternion.identity);
         Destroy(buildEffectInst,2f);
     }
+    public void SelectedPlace(MapPlacement place)
+    {
+        if(selectedPlace==place)
+        {
+            DeselecMapMenu();
+            return;
+        }
+        selectedPlace = place;
+        turretTemplate=null;
+        mapUI.SetTurretToMenu(place);
+    }
     public void ChooseTurretToBuy(TurretTemplate turret)
     {
         turretTemplate = turret;
+        DeselecMapMenu();
+    }
+
+    public void DeselecMapMenu()
+    {
+        selectedPlace=null;
+        mapUI.HideMapMenu();
     }
 }
