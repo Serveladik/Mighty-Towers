@@ -113,7 +113,7 @@ public class TurretAttack : MonoBehaviour
         
         else
         {
-            targetEnemy.speed = targetEnemy.startSpeed;
+            
             lineRenderer.enabled=false;
             laserEffect.Stop();
         }

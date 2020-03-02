@@ -33,6 +33,7 @@ public Text waveText;
     
     if(waveTimer>=0)
     {
+        
         waveTimer-=Time.deltaTime;
         waveText.text = "Next Wave: " + string.Format("{0:00.00}",waveTimer);
     }
@@ -47,10 +48,11 @@ public Text waveText;
         //yield return new WaitForSeconds(0.5f);
         while (true)
         {
-
+            
             waveNumber++;
             for(int i = 0; i < 1; i++)
             {
+                PlayerStats.rounds++;
                 SpawnEnemy();
                 yield return new WaitForSeconds(0.5f);
                 SpawnEnemy();

@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    private bool gameOver = false;
+    public static bool gameOver;
+    public GameObject gameOverUI;
     void Update()
     {
         if(gameOver==true)
@@ -15,11 +16,14 @@ public class GameManager : MonoBehaviour
             GameOver();
         }
     }
-
+void Start()
+{
+    gameOver=false;
+}
     void GameOver()
     {
         gameOver=true;
-        Debug.Log("GameOver!");
+        gameOverUI.SetActive(true);
         return;
     }
 }

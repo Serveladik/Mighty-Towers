@@ -20,6 +20,11 @@ public class CameraControl : MonoBehaviour
    }
     void Update()
     {
+        if(GameManager.gameOver)
+        {
+            this.enabled = false;
+            return;
+        }
         Pan();
         Zoom();
     }

@@ -23,7 +23,7 @@ public class EnemyTarget : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
-        Debug.Log("SPEED: " + speed);
+        
         health-=damage;
         if(health<=0)
         {
