@@ -29,27 +29,12 @@ public class BuildMechanics : MonoBehaviour
     }
     public bool CheckBuild {get {return  turretTemplate != null;}}
     public bool CheckMoney {get {return  PlayerStats.money >= turretTemplate.price;}}
-    public void BuildTurretOn(MapPlacement map)
-    {
-        if(PlayerStats.money < turretTemplate.price)
-        {
-           Debug.Log("Not enough money!");
-           return;
-        }
-        else
-        {
-            PlayerStats.money -=turretTemplate.price;
-        }
-        GameObject turret = (GameObject) Instantiate(turretTemplate.turretPrefab,map.GetBuildPosition(),Quaternion.identity);
-        map.turret = turret;
-        GameObject buildEffectInst = (GameObject)Instantiate(buildEffect,map.GetBuildPosition(), Quaternion.identity);
-        Destroy(buildEffectInst,2f);
-    }
+   
     public void SelectedPlace(MapPlacement place)
     {
         if(selectedPlace==place)
         {
-            DeselecMapMenu();
+            DeselectMapMenu();
             return;
         }
         selectedPlace = place;
@@ -59,12 +44,16 @@ public class BuildMechanics : MonoBehaviour
     public void ChooseTurretToBuy(TurretTemplate turret)
     {
         turretTemplate = turret;
-        DeselecMapMenu();
+        DeselectMapMenu();
     }
 
-    public void DeselecMapMenu()
+    public void DeselectMapMenu()
     {
         selectedPlace=null;
         mapUI.HideMapMenu();
+    }
+    public TurretTemplate GetTurretToBuild()
+    {
+        return turretTemplate;
     }
 }

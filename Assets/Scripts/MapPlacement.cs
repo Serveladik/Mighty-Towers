@@ -12,6 +12,8 @@ public class MapPlacement : MonoBehaviour
     private Renderer tileRender;
     private Color defaultTileColor;
     public GameObject turret;
+    public TurretTemplate turretTemplate;
+    public bool isUpgraded;
     BuildMechanics buildMechanics;
     
     void Start()
@@ -23,6 +25,23 @@ public class MapPlacement : MonoBehaviour
     public Vector3 GetBuildPosition()
     {
         return transform.position + offset;
+    }
+    void BuildTurret(TurretTemplate template)
+    {
+        if(PlayerStats.money < template.price)
+        {
+           Debug.Log("Not enough money!");
+           return;
+        }
+        else
+        {
+            PlayerStats.money -=template.price;
+        }
+        GameObject turret = (GameObject) Instantiate(template.turretPrefab,GetBuildPosition(),Quaternion.identity);
+        this.turret = turret;
+        turretTemplate = template;
+        GameObject buildEffectInst = (GameObject)Instantiate(buildMechanics.buildEffect,GetBuildPosition(), Quaternion.identity);
+        Destroy(buildEffectInst,2f);
     }
    void OnMouseEnter()
    {
@@ -46,6 +65,32 @@ public class MapPlacement : MonoBehaviour
        }
        
    }
+   public void UpgradeTurret()
+   {
+       if(PlayerStats.money < turretTemplate.upgradePrice)
+        {
+           Debug.Log("Not enough money!");
+           return;
+        }
+        else
+        {
+            PlayerStats.money -= turretTemplate.upgradePrice;
+        }
+        //Destroy old turret
+        Destroy(this.turret);
+        this.turretTemplate = turretTemplate;
+        
+        GameObject turret = (GameObject) Instantiate(turretTemplate.upgradePrefab,GetBuildPosition(),Quaternion.identity);
+        this.turret = turret;
+        GameObject buildEffectInst = (GameObject)Instantiate(buildMechanics.buildEffect,GetBuildPosition(), Quaternion.identity);
+        
+        Destroy(buildEffectInst,2f);
+        isUpgraded=true;
+   }
+   public void SellTurret()
+   {
+
+   }
    void OnMouseExit()
    {
        tileRender.material.color = defaultTileColor;
@@ -67,12 +112,9 @@ public class MapPlacement : MonoBehaviour
            Debug.Log("CANT BUILD HERE!");
            return;
        }
-    buildMechanics.BuildTurretOn(this);
+    BuildTurret(buildMechanics.GetTurretToBuild());
 
    }
 
-    void Update()
-    {
-       
-    }
+    
 }

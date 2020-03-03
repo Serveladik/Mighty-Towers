@@ -8,4 +8,7 @@ public class TurretTemplate
     
    public GameObject turretPrefab;
    public int price;
+
+   public GameObject upgradePrefab;
+   public int upgradePrice;
 }

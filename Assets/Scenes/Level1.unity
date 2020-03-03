@@ -7512,7 +7512,7 @@ GameObject:
   - component: {fileID: 835833335}
   - component: {fileID: 835833334}
   m_Layer: 0
-  m_Name: Button
+  m_Name: UpgradeButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7580,7 +7580,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 835833335}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1184778628}
+        m_MethodName: Upgrade
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &835833335
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7627,6 +7638,10 @@ PrefabInstance:
     - target: {fileID: 690980308, guid: 30c489d50dc716b4f961d598559b7379, type: 3}
       propertyPath: startSpeed
       value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 690980308, guid: 30c489d50dc716b4f961d598559b7379, type: 3}
+      propertyPath: health
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 1238609227094654602, guid: 30c489d50dc716b4f961d598559b7379,
         type: 3}
@@ -8168,14 +8183,21 @@ MonoBehaviour:
     turretPrefab: {fileID: 5708615121423558785, guid: 447a7048ab4f77e4fab5a04d95611c0a,
       type: 3}
     price: 45
+    upgradePrefab: {fileID: 5708615121423558785, guid: c8205c68e9b5c8641b45ad2e1944e73a,
+      type: 3}
+    upgradePrice: 65
   splashTurret:
     turretPrefab: {fileID: 8777230618955846314, guid: 42e356c24318e1b4ea21082074d3a14f,
       type: 3}
     price: 60
+    upgradePrefab: {fileID: 0}
+    upgradePrice: 85
   laserTurret:
     turretPrefab: {fileID: 7116316392259787760, guid: f1101fe2996c5514b8ea04ecb175d29c,
       type: 3}
     price: 80
+    upgradePrefab: {fileID: 0}
+    upgradePrice: 95
 --- !u!1 &1184778626
 GameObject:
   m_ObjectHideFlags: 0
@@ -8185,8 +8207,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1184778627}
-  - component: {fileID: 1184778628}
   - component: {fileID: 1184778629}
+  - component: {fileID: 1184778628}
   m_Layer: 0
   m_Name: MapUI
   m_TagString: Untagged
@@ -8221,6 +8243,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb8b8af9ef4ae2149a64ffece9deb9c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  upgradePriceText: {fileID: 1664637079}
+  upgradeButton: {fileID: 835833334}
   mapUi: {fileID: 1184778626}
 --- !u!95 &1184778629
 Animator:
@@ -9483,7 +9507,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0.012544155, b: 1, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -9523,7 +9547,7 @@ GameObject:
   - component: {fileID: 1665965052}
   - component: {fileID: 1665965051}
   m_Layer: 0
-  m_Name: Button (1)
+  m_Name: SellButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10025,7 +10049,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0.012544155, b: 1, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
