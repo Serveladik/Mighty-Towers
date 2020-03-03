@@ -12,11 +12,9 @@ public class MapUI : MonoBehaviour
    public GameObject mapUi;
    public void SetTurretToMenu(MapPlacement turretMenu)
    {
-       do
-       {
-           Time.timeScale-=Time.deltaTime;
-       }
-       while(Time.timeScale<=0.3);
+       
+        Time.timeScale=0.3f;
+         
         
        
        this.turretMenu = turretMenu;
@@ -37,11 +35,7 @@ public class MapUI : MonoBehaviour
 
     public void HideMapMenu()
     {
-        do
-       {
-           Time.timeScale+=Time.deltaTime;
-       }
-       while(Time.timeScale>=1);
+        Time.timeScale=1f;
         mapUi.SetActive(false); 
     }
     public void Upgrade()
@@ -53,6 +47,11 @@ public class MapUI : MonoBehaviour
     public void Sell()
     {
         turretMenu.SellTurret();
+    }
+
+    void Update()
+    {
+        Debug.Log(Time.timeScale);
     }
 
 }
