@@ -89,7 +89,13 @@ public class MapPlacement : MonoBehaviour
    }
    public void SellTurret()
    {
+        PlayerStats.money += turretTemplate.GetSellPrice();
 
+        GameObject sellEffectInst = (GameObject)Instantiate(buildMechanics.sellEffect,GetBuildPosition(), Quaternion.identity);
+        Destroy(sellEffectInst,2f);
+
+        Destroy(this.turret);
+        turretTemplate=null;
    }
    void OnMouseExit()
    {

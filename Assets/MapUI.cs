@@ -8,6 +8,8 @@ public class MapUI : MonoBehaviour
    private MapPlacement turretMenu;
    [Header("Upgrade")]
    public Text upgradePriceText;
+    [Header("Sell")]
+   public Text sellPriceText;
    public Button upgradeButton;
    public GameObject mapUi;
    public void SetTurretToMenu(MapPlacement turretMenu)
@@ -30,6 +32,7 @@ public class MapUI : MonoBehaviour
            upgradePriceText.text = "Upgrade:" + "\n" + "Max";
            upgradeButton.interactable = false;
        }
+       sellPriceText.text = "Sell:" + "\n" + turretMenu.turretTemplate.GetSellPrice() +"$";
        mapUi.SetActive(true);
    }
 
@@ -47,6 +50,8 @@ public class MapUI : MonoBehaviour
     public void Sell()
     {
         turretMenu.SellTurret();
+        BuildMechanics.instance.DeselectMapMenu();
+        
     }
 
     void Update()

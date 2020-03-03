@@ -12,6 +12,7 @@ public class BuildMechanics : MonoBehaviour
     private TurretTemplate turretTemplate;
     private MapPlacement selectedPlace;
     public GameObject buildEffect;
+    public GameObject sellEffect;
     public MapUI mapUI;
     void Awake()
     {

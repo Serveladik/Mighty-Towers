@@ -11,4 +11,10 @@ public class TurretTemplate
 
    public GameObject upgradePrefab;
    public int upgradePrice;
+
+
+   public int GetSellPrice()
+   {
+      return price / 2;
+   }
 }
