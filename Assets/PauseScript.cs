@@ -5,10 +5,8 @@ using UnityEngine.SceneManagement;
 public class PauseScript : MonoBehaviour
 {
     public GameObject pauseUI;
-    void Update()
-    {
-        
-    }
+    public GameObject pauseCanvas;
+    public Animator fadeOut;
     public void Pause()
     {
         pauseUI.SetActive(!pauseUI.activeSelf);
@@ -27,7 +25,17 @@ public class PauseScript : MonoBehaviour
     }
     public void Exit()
     {
-        SceneManager.LoadScene("Menu");
+        StartCoroutine("ExitIE");
+    }
+
+    public IEnumerator ExitIE()
+    {
+        Time.timeScale=1f;
+        pauseCanvas.transform.localScale=new Vector3(0,0,0);
+        fadeOut.SetBool("FadeOut",true);
+        yield return new WaitForSeconds(1f);
+        SceneManager.LoadScene("Menu"); 
+        Debug.Log("MENU!");
     }
 
 }
