@@ -6,18 +6,20 @@ using UnityEngine.UI;
 
 public class WaveSpawner : MonoBehaviour
 {
-    public GameObject enemy;
+    public GameObject enemyType;
+    public WaveInfo[] waves;
     public Transform spawnPosition;
     public float waveTime = 4;
     private float countdown = 2f;
     private int waveNumber=0;
     private float waveTimer=1f;
-    // Update is called once per frame
+    
 
 public Text waveText;
  
     void Start()
     {
+        waveTime=1;
         waveTimer = waveTime;
         WaveTimer();
         StartCoroutine(SpawnWave());
@@ -48,9 +50,9 @@ public Text waveText;
         //yield return new WaitForSeconds(0.5f);
         while (true)
         {
+            waveTime=5;
             
-            waveNumber++;
-            for(int i = 0; i < 1; i++)
+            for(int i = 0; i < waveNumber; i++)
             {
                 PlayerStats.rounds++;
                 SpawnEnemy();
@@ -66,10 +68,11 @@ public Text waveText;
             }
             yield return new WaitForSeconds(waveTime);
             waveTimer=waveTime+0.5f;
+            waveNumber++;
         }
     }
     void SpawnEnemy()
     {
-        Instantiate(enemy,spawnPosition.position,spawnPosition.rotation);
+        Instantiate(enemyType,spawnPosition.position,spawnPosition.rotation);
     }
 }
