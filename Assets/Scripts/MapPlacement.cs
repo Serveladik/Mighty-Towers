@@ -30,7 +30,7 @@ public class MapPlacement : MonoBehaviour
     {
         if(PlayerStats.money < template.price)
         {
-           Debug.Log("Not enough money!");
+           //Debug.Log("Not enough money!");
            return;
         }
         else
@@ -51,7 +51,7 @@ public class MapPlacement : MonoBehaviour
        }
        if(!buildMechanics.CheckBuild)
        {
-           Debug.Log("CANT BUILD HERE!");
+           //Debug.Log("CANT BUILD HERE!");
            return;
        }
 

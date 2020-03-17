@@ -6,12 +6,11 @@ using UnityEngine.UI;
 
 public class WaveSpawner : MonoBehaviour
 {
-    public GameObject enemyType;
-    public WaveInfo[] waves;
+    public WaveInfo[] enemyType;
     public Transform spawnPosition;
     public float waveTime = 4;
-    private float countdown = 2f;
-    private int waveNumber=0;
+    //private float countdown = 2f;
+    private int difficulty=0;
     private float waveTimer=1f;
     
 
@@ -19,60 +18,58 @@ public Text waveText;
  
     void Start()
     {
-        waveTime=1;
         waveTimer = waveTime;
         WaveTimer();
         StartCoroutine(SpawnWave());
     }
     void Update()
     {
+        
         WaveTimer();
+        
+        
     }
 
 
  void WaveTimer()
  {
-    
-    if(waveTimer>=0)
-    {
-        
+    if(waveTimer>0)
+    { 
         waveTimer-=Time.deltaTime;
         waveText.text = "Next Wave: " + string.Format("{0:00.00}",waveTimer);
+    } 
+    if(waveTimer<=0)
+    {
+        StartCoroutine(SpawnWave());
+        waveTimer = waveTime;
+        //Difficulty per waves
+        if(difficulty<enemyType.Length-1)
+        {
+            if(PlayerStats.rounds>0 && PlayerStats.rounds%5==0)
+            {
+                difficulty++;
+                return;
+            }
+        }
+        Debug.Log("Difficulty: " + difficulty);
     }
-    
-    
-    
  }
 
     IEnumerator SpawnWave()
     {
-        
-        //yield return new WaitForSeconds(0.5f);
-        while (true)
+        PlayerStats.rounds++;
+        WaveInfo wave = enemyType[difficulty];
+        for(int i = 0; i < wave.count; i++)
         {
-            waveTime=5;
             
-            for(int i = 0; i < waveNumber; i++)
-            {
-                PlayerStats.rounds++;
-                SpawnEnemy();
-                yield return new WaitForSeconds(0.5f);
-                SpawnEnemy();
-                yield return new WaitForSeconds(0.5f);
-                SpawnEnemy();
-                yield return new WaitForSeconds(0.5f);
-                SpawnEnemy();
-                yield return new WaitForSeconds(0.5f);
-                SpawnEnemy();
-                yield return new WaitForSeconds(0.5f);
-            }
-            yield return new WaitForSeconds(waveTime);
-            waveTimer=waveTime+0.5f;
-            waveNumber++;
+            SpawnEnemy(wave.enemy);
+            yield return new WaitForSeconds(1f/wave.rate);
         }
+        
+        //waveNumber++;
     }
-    void SpawnEnemy()
+    void SpawnEnemy(GameObject enemy)
     {
-        Instantiate(enemyType,spawnPosition.position,spawnPosition.rotation);
+        Instantiate(enemy,spawnPosition.position,spawnPosition.rotation);
     }
 }

@@ -57,7 +57,7 @@ public class TurretAttack : MonoBehaviour
             
             target=nearestEnemy.transform;
             
-            Debug.Log("Attack");
+            //Debug.Log("Attack");
         }
         else
         {
