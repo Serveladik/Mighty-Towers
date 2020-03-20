@@ -11,7 +11,7 @@ public class MenuPlayButton : MonoBehaviour
     public Animator levelSelectAnim;
     void Awake()
     {
-        Time.timeScale=1f;
+        //Time.timeScale=1f;
     }
     public void PlayBtn()
     {
@@ -21,19 +21,44 @@ public class MenuPlayButton : MonoBehaviour
     {
         StartCoroutine("BackButton");
     }
+    public void BackSettingsBtn()
+    {
+        StartCoroutine("BackSettingsButton");
+    }
+    public void EnterSettingsBtn()
+    {
+        StartCoroutine("EnterSettingsButton");
+    }
    public IEnumerator PlayButton()
    {
        menuAnim.SetBool("Play",true);
-       yield return new WaitForSeconds(1f);
+       yield return new WaitForSecondsRealtime(1f);
        mainMenu.SetActive(false);
        SelectLevel.SetActive(true);
    }
    public IEnumerator BackButton()
    {
        menuAnim.SetBool("Play",false);
-       levelSelectAnim.SetBool("LoadingLevel",true);
-       yield return new WaitForSeconds(0.5f);
+       yield return new WaitForSecondsRealtime(0.5f);
        mainMenu.SetActive(true);
        SelectLevel.SetActive(false);
+   }
+
+   
+   public IEnumerator EnterSettingsButton()
+   {
+    menuAnim.SetBool("PauseFadeOut",true);
+    yield return new WaitForSecondsRealtime(0.5f);
+    mainMenu.SetActive(false);
+    SelectLevel.SetActive(true);
+   
+   }
+   public IEnumerator BackSettingsButton()
+   {
+    levelSelectAnim.SetBool("SettingsOut",true);
+    yield return new WaitForSecondsRealtime(0.5f);
+    SelectLevel.SetActive(false);
+    mainMenu.SetActive(true);
+    
    }
 }

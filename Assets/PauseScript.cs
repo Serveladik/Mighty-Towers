@@ -9,15 +9,17 @@ public class PauseScript : MonoBehaviour
     public Animator fadeOut;
     public void Pause()
     {
+        pauseUI.SetActive(true);
+        
+        Time.timeScale=0f;
+        
+       
+    }
+    public void Continue()
+    {
+        Time.timeScale=1f;
         pauseUI.SetActive(!pauseUI.activeSelf);
-        if(pauseUI.activeSelf)
-        {
-            Time.timeScale=0f;
-        }
-        else
-        {
-            Time.timeScale=1f;
-        }
+
     }
     public void Settings()
     {
@@ -33,9 +35,9 @@ public class PauseScript : MonoBehaviour
         Time.timeScale=1f;
         pauseCanvas.transform.localScale=new Vector3(0,0,0);
         fadeOut.SetBool("FadeOut",true);
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSecondsRealtime(1f);
         SceneManager.LoadScene("Menu"); 
-        Debug.Log("MENU!");
+        
     }
 
 }

@@ -6,18 +6,23 @@ using UnityEngine.UI;
 
 public class WaveSpawner : MonoBehaviour
 {
+    
+    public GameManager gameManager;
     public WaveInfo[] enemyType;
     public Transform spawnPosition;
+    public int waveNumber=1;
     public float waveTime = 4;
     //private float countdown = 2f;
     private int difficulty=0;
     private float waveTimer=1f;
+    
     
 
 public Text waveText;
  
     void Start()
     {
+        gameManager = gameObject.GetComponent<GameManager>();
         waveTimer = waveTime;
         WaveTimer();
         StartCoroutine(SpawnWave());
@@ -26,8 +31,7 @@ public Text waveText;
     {
         
         WaveTimer();
-        
-        
+  
     }
 
 
@@ -40,8 +44,19 @@ public Text waveText;
     } 
     if(waveTimer<=0)
     {
-        StartCoroutine(SpawnWave());
-        waveTimer = waveTime;
+        
+        if(waveNumber-1==PlayerStats.rounds)
+        {
+            
+            Debug.Log("You won!");
+            gameManager.Completelevel();
+            StopCoroutine(SpawnWave());
+        }
+        else
+        {
+            StartCoroutine(SpawnWave());
+            waveTimer = waveTime;
+        }
         //Difficulty per waves
         if(difficulty<enemyType.Length-1)
         {
@@ -64,9 +79,10 @@ public Text waveText;
             
             SpawnEnemy(wave.enemy);
             yield return new WaitForSeconds(1f/wave.rate);
+            
         }
         
-        //waveNumber++;
+        
     }
     void SpawnEnemy(GameObject enemy)
     {

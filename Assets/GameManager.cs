@@ -1,11 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    public GameObject victoryCanvas;
     public static bool gameOver;
     public GameObject gameOverUI;
+    public Animator animation;
+    
+    public int unlockNextLevel = 2;
     void Update()
     {
         if(gameOver==true)
@@ -18,6 +23,7 @@ public class GameManager : MonoBehaviour
     }
 void Start()
 {
+   
     gameOver=false;
 }
     void GameOver()
@@ -26,4 +32,14 @@ void Start()
         gameOverUI.SetActive(true);
         return;
     }
+    public void Completelevel()
+    {
+        victoryCanvas.SetActive(true);
+        PlayerPrefs.SetInt("Level",unlockNextLevel);
+        Time.timeScale=1;
+        animation.SetBool("Victory",true);
+        
+    }
+    
+    
 }
