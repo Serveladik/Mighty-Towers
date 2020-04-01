@@ -24,10 +24,7 @@ public class BuildMechanics : MonoBehaviour
     }
     
 
-    void Update()
-    {
-        
-    }
+   
     public bool CheckBuild {get {return  turretTemplate != null;}}
     public bool CheckMoney {get {return  PlayerStats.money >= turretTemplate.price;}}
    
@@ -38,6 +35,7 @@ public class BuildMechanics : MonoBehaviour
             DeselectMapMenu();
             return;
         }
+        
         selectedPlace = place;
         turretTemplate=null;
         mapUI.SetTurretToMenu(place);

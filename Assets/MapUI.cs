@@ -5,20 +5,19 @@ using UnityEngine.UI;
 
 public class MapUI : MonoBehaviour
 {
+    public Animator mapMenu;
    private MapPlacement turretMenu;
    [Header("Upgrade")]
    public Text upgradePriceText;
-    [Header("Sell")]
+   [Header("Sell")]
    public Text sellPriceText;
    public Button upgradeButton;
    public GameObject mapUi;
    public void SetTurretToMenu(MapPlacement turretMenu)
    {
        
-        Time.timeScale=0.3f;
-         
-        
-       
+       Time.timeScale=0.3f;
+     
        this.turretMenu = turretMenu;
        transform.position = turretMenu.GetBuildPosition();
        
@@ -34,11 +33,13 @@ public class MapUI : MonoBehaviour
        }
        sellPriceText.text = "Sell:" + "\n" + turretMenu.turretTemplate.GetSellPrice() +"$";
        mapUi.SetActive(true);
+       mapMenu.SetBool("TurretMenu",true);
    }
 
     public void HideMapMenu()
     {
         Time.timeScale=1f;
+        mapMenu.SetBool("TurretMenu",false);
         mapUi.SetActive(false); 
     }
     public void Upgrade()
@@ -54,9 +55,9 @@ public class MapUI : MonoBehaviour
         
     }
 
-    void Update()
+   
+    void Start()
     {
-        Debug.Log(Time.timeScale);
+        mapMenu.SetBool("TurretMenu",true);
     }
-
 }

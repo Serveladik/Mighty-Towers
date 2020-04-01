@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class TurretAttack : MonoBehaviour
 {
+    public AudioSource audio;
+    public AudioClip shotClip;
     public Transform turret;
     public Transform target;
     private EnemyTarget targetEnemy;
@@ -20,10 +22,12 @@ public class TurretAttack : MonoBehaviour
     public bool useLaser=false;
     public int damageOverTime = 30;
     public float slow=10f;
+    private float timer=0;
     public LineRenderer lineRenderer;
     public ParticleSystem laserEffect;
     void Start()
     {
+        audio = GameObject.Find("SoundsManager").GetComponent<AudioSource>();
         turret = GetComponent<Transform>();
         InvokeRepeating("SearchTarget",0f,0.1f);
     }
@@ -81,6 +85,10 @@ public class TurretAttack : MonoBehaviour
             {
                 GameObject bulletGO = (GameObject)Instantiate(bulletPrefab,bulletSpawn.position,bulletSpawn.rotation);
                 Bullet bullet = bulletGO.GetComponent<Bullet>();
+
+                audio.clip=shotClip;
+                audio.PlayOneShot(shotClip);
+                
                 if(bullet!=null)
                 {
                     bullet.Seeking(target);
@@ -92,10 +100,21 @@ public class TurretAttack : MonoBehaviour
    }
    void Laser()
    {
-       
+       if(target==null)
+       {
+           timer=0;
+       }
        //if(!lineRenderer.enabled)
        if(target!=null)
        {
+        
+        timer-=Time.deltaTime;
+        if(timer<=0)
+        {
+            audio.clip=shotClip;
+            audio.PlayOneShot(shotClip);
+            timer=0.3f;
+        }
         targetEnemy.GetComponent<EnemyTarget>().TakeDamage(damageOverTime * Time.deltaTime);
         targetEnemy.Slow(slow);
         
@@ -108,6 +127,7 @@ public class TurretAttack : MonoBehaviour
         //Vector3 laserDir = bulletSpawn.position - target.position;
         
         laserEffect.transform.position = target.position;
+        Debug.Log(timer);
         //laserEffect.transform.rotation = Quaternion.LookRotation(laserDir);
        }
         
@@ -118,10 +138,7 @@ public class TurretAttack : MonoBehaviour
             laserEffect.Stop();
         }
    }
-   void Slow()
-   {
-
-   }
+   
     void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;

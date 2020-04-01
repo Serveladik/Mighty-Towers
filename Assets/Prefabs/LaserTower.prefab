@@ -10002,6 +10002,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5017572187333dd4d977dcac9214e35f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audio: {fileID: 0}
+  shotClip: {fileID: 8300000, guid: 1e872650297f8da43841e5676fd8e816, type: 3}
   turret: {fileID: 0}
   target: {fileID: 0}
   rotationSpeed: 1
