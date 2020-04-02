@@ -6283,6 +6283,26 @@ PrefabInstance:
       propertyPath: Loop
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 601801650292600122, guid: 2c92a8749e74e7e459c8f850a47e763f,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 8d7749534073eab45b32b2f1344f905d, type: 3}
+    - target: {fileID: 601801650292600122, guid: 2c92a8749e74e7e459c8f850a47e763f,
+        type: 3}
+      propertyPath: rolloffMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 601801650292600122, guid: 2c92a8749e74e7e459c8f850a47e763f,
+        type: 3}
+      propertyPath: DopplerLevel
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 601801650292600122, guid: 2c92a8749e74e7e459c8f850a47e763f,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0.61
+      objectReference: {fileID: 0}
     - target: {fileID: 601801650292600123, guid: 2c92a8749e74e7e459c8f850a47e763f,
         type: 3}
       propertyPath: m_Name
