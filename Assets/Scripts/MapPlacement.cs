@@ -109,13 +109,13 @@ public class MapPlacement : MonoBehaviour
        }
        if(turret!=null)
        {
-           Debug.Log("Tile is Busy");
+           //Debug.Log("Tile is Busy");
            buildMechanics.SelectedPlace(this);
            return;
        }
        if(!buildMechanics.CheckBuild)
        {
-           Debug.Log("CANT BUILD HERE!");
+           //Debug.Log("CANT BUILD HERE!");
            return;
        }
     BuildTurret(buildMechanics.GetTurretToBuild());

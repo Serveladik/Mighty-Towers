@@ -127,7 +127,7 @@ public class TurretAttack : MonoBehaviour
         //Vector3 laserDir = bulletSpawn.position - target.position;
         
         laserEffect.transform.position = target.position;
-        Debug.Log(timer);
+        //Debug.Log(timer);
         //laserEffect.transform.rotation = Quaternion.LookRotation(laserDir);
        }
         

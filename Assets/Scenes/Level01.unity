@@ -1131,7 +1131,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 212559847}
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -65.99, y: 3.78, z: -65.119316}
+  m_LocalPosition: {x: -67.12, y: 3.78, z: -65.119316}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -5746,6 +5746,7 @@ GameObject:
   - component: {fileID: 1985750823}
   - component: {fileID: 1985750824}
   - component: {fileID: 1985750825}
+  - component: {fileID: 1985750826}
   m_Layer: 0
   m_Name: GameMechanics
   m_TagString: Untagged
@@ -5854,6 +5855,22 @@ MonoBehaviour:
   gameOverUI: {fileID: 1432324648}
   animation: {fileID: 965155179}
   unlockNextLevel: 2
+--- !u!114 &1985750826
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1985750820}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1310e46365d24f8458d3ea3340293918, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundsVolumeSlider: {fileID: 6200917966071057741}
+  soundsTextValue: {fileID: 6200917965145105498}
+  musicVolumeSlider: {fileID: 6200917965532687363}
+  musicTextValue: {fileID: 6200917964945574686}
 --- !u!1 &1988356981
 GameObject:
   m_ObjectHideFlags: 0
@@ -6277,31 +6294,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 601801650292600122, guid: 2c92a8749e74e7e459c8f850a47e763f,
-        type: 3}
-      propertyPath: Loop
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 601801650292600122, guid: 2c92a8749e74e7e459c8f850a47e763f,
-        type: 3}
-      propertyPath: m_audioClip
-      value: 
-      objectReference: {fileID: 8300000, guid: 8d7749534073eab45b32b2f1344f905d, type: 3}
-    - target: {fileID: 601801650292600122, guid: 2c92a8749e74e7e459c8f850a47e763f,
-        type: 3}
-      propertyPath: rolloffMode
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 601801650292600122, guid: 2c92a8749e74e7e459c8f850a47e763f,
-        type: 3}
-      propertyPath: DopplerLevel
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 601801650292600122, guid: 2c92a8749e74e7e459c8f850a47e763f,
-        type: 3}
-      propertyPath: m_Volume
-      value: 0.61
       objectReference: {fileID: 0}
     - target: {fileID: 601801650292600123, guid: 2c92a8749e74e7e459c8f850a47e763f,
         type: 3}

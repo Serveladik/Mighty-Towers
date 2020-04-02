@@ -24,10 +24,12 @@ public class EnemyMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-    
-        navMesh.SetDestination(GameObject.FindGameObjectWithTag("EndBase").transform.position);
-        navMesh.speed = enemy.speed;
-        enemy.speed = enemy.startSpeed;
+        if(navMesh!=null)
+        {
+            navMesh.SetDestination(GameObject.FindGameObjectWithTag("EndBase").transform.position);
+            navMesh.speed = enemy.speed;
+            enemy.speed = enemy.startSpeed;
+        }
         
     }
     public void OnTriggerEnter(Collider deadZone)

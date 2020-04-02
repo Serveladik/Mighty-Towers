@@ -30,15 +30,11 @@ public class BuildMechanics : MonoBehaviour
    
     public void SelectedPlace(MapPlacement place)
     {
-        if(selectedPlace.tag=="Map")
+        if(selectedPlace==place)
         {
-            place.tag="Map";
-            if(place.tag=="Map")
-            Debug.Log("selected "+selectedPlace + "place "+place);
             DeselectMapMenu();
             return;
         }
-        
         
         selectedPlace = place;
         turretTemplate=null;
