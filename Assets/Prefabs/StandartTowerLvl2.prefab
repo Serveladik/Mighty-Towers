@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5017572187333dd4d977dcac9214e35f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audio: {fileID: 5943103669241883351, guid: 38c7d127ec51c0546a7048ab10c68bfd, type: 3}
+  audio: {fileID: 0}
   shotClip: {fileID: 8300000, guid: acdbed63c952b73438d6f4f7ffc8d8cb, type: 3}
   turret: {fileID: 0}
   target: {fileID: 0}

@@ -32,6 +32,7 @@ public class MenuPlayButton : MonoBehaviour
    public IEnumerator PlayButton()
    {
        menuAnim.SetBool("Play",true);
+       
        yield return new WaitForSecondsRealtime(1f);
        mainMenu.SetActive(false);
        SelectLevel.SetActive(true);
@@ -39,6 +40,7 @@ public class MenuPlayButton : MonoBehaviour
    public IEnumerator BackButton()
    {
        menuAnim.SetBool("Play",false);
+       levelSelectAnim.SetBool("SettingsOut",true);
        yield return new WaitForSecondsRealtime(0.5f);
        mainMenu.SetActive(true);
        SelectLevel.SetActive(false);
