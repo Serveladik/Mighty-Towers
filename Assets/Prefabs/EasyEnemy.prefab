@@ -107,12 +107,11 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 784690665}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5d6974dad7d27ff49b3a1a526f2fc17c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Camera: {fileID: 0}
 --- !u!1 &855678228
 GameObject:
   m_ObjectHideFlags: 0
@@ -375,7 +374,7 @@ GameObject:
   - component: {fileID: 2840422674204298375}
   - component: {fileID: -7613317118246864758}
   m_Layer: 0
-  m_Name: Enemy
+  m_Name: EasyEnemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

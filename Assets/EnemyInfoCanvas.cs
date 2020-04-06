@@ -4,11 +4,15 @@ using UnityEngine;
 
 public class EnemyInfoCanvas : MonoBehaviour
 {
-   public Transform Camera;
-
-    // Update is called once per frame
-    void Update()
-    {
-        gameObject.transform.LookAt(Camera,Vector3.up);
-    }
+    private Quaternion iniRot;
+ 
+ void Start()
+ {
+    iniRot = transform.rotation;
+ }
+ 
+ void LateUpdate()
+ {
+    transform.rotation = iniRot;
+ }
 }
