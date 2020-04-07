@@ -340,8 +340,8 @@ MonoBehaviour:
   healthBar: {fileID: 855678230}
   speed: 10
   bounty: 10
-  health: 20
-  startSpeed: 15
+  health: 30
+  startSpeed: 16
   enemy: {fileID: 2840422674204298393}
   deathVFX: {fileID: 8589117891853693392, guid: dc5ec3063537e574ab06b1b359b9716e,
     type: 3}

@@ -132,8 +132,8 @@ MonoBehaviour:
   bulletPrefab: {fileID: 8506520459754445038, guid: ed647bd6ea4aa804aa8fe90c08b982ca,
     type: 3}
   bulletSpawn: {fileID: 2374854359193122727}
-  range: 36.04
-  fireSpeed: 1
+  range: 23
+  fireSpeed: 0.5
   useLaser: 0
   damageOverTime: 30
   slow: 10

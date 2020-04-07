@@ -112,7 +112,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d6974dad7d27ff49b3a1a526f2fc17c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Camera: {fileID: 0}
 --- !u!1 &855678228
 GameObject:
   m_ObjectHideFlags: 0
@@ -340,9 +339,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthBar: {fileID: 855678230}
   speed: 10
-  bounty: 25
-  health: 65
-  startSpeed: 25
+  bounty: 30
+  health: 500
+  startSpeed: 10
   enemy: {fileID: 2840422674204298393}
   deathVFX: {fileID: 8589117891853693392, guid: dc5ec3063537e574ab06b1b359b9716e,
     type: 3}
