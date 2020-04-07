@@ -11,6 +11,7 @@ public class LevelSelector : MonoBehaviour
 
     void Start()
     {
+        
         int levelProgress = PlayerPrefs.GetInt("Level",1);
         for ( ;levelProgress < levelButtons.Length; levelProgress++)
         {

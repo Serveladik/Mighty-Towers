@@ -48,7 +48,7 @@ public Text waveText;
         if(waveNumber-1==PlayerStats.rounds)
         {
             
-            Debug.Log("You won!");
+            //Debug.Log("You won!");
             gameManager.Completelevel();
             StopCoroutine(SpawnWave());
         }
@@ -66,7 +66,7 @@ public Text waveText;
                 return;
             }
         }
-        Debug.Log("Difficulty: " + difficulty);
+        //Debug.Log("Difficulty: " + difficulty);
     }
  }
 

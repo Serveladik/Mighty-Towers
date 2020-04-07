@@ -2994,7 +2994,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fadein: {fileID: 8392478}
-  nextLevel: Level02
+  nextLevel: Level05
 --- !u!1 &271373325
 GameObject:
   m_ObjectHideFlags: 0

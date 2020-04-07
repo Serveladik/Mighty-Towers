@@ -143,6 +143,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animation: {fileID: 0}
+  levelButtons:
+  - {fileID: 7716070921253358880}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1 &7716070921468839873
 GameObject:
   m_ObjectHideFlags: 0
