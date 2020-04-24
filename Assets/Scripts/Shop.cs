@@ -15,12 +15,10 @@ public class Shop : MonoBehaviour
     }
     public void BuyStandartTurret()
     {
-        
         buildMechanics.ChooseTurretToBuy(standartTurret);
     }
     public void BuySplashTurret()
     {
-        
         buildMechanics.ChooseTurretToBuy(splashTurret);
     }
     public void BuyLaserTurret()
@@ -30,12 +28,5 @@ public class Shop : MonoBehaviour
     public void BuyAirTurret()
     {
         Debug.Log("AirBOUGHT");
-    }
-    
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

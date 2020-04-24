@@ -38,7 +38,7 @@ public class EnemyMovement : MonoBehaviour
         {
             PlayerStats.lives-=1;
             GameObject.Destroy(this.enemyObject);
-            Debug.Log("DEAD");
+            //Debug.Log("DEAD");
         }
     }
 }

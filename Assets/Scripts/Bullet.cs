@@ -20,7 +20,6 @@ public class Bullet : MonoBehaviour
             Destroy(gameObject);
             return;
         }
-
         Vector3 direction = enemy.position - transform.position;
         float distance = speed*Time.deltaTime;
         if(direction.magnitude<=distance)
@@ -29,7 +28,6 @@ public class Bullet : MonoBehaviour
             return;
         }
         transform.Translate(direction.normalized * distance, Space.World);
-        //transform.LookAt(enemy.position);
     }
     void HitEnemy()
     {
@@ -43,10 +41,7 @@ public class Bullet : MonoBehaviour
         {
             hitDamage(enemy);
         }
-        //Destroy(enemy.gameObject);
         Destroy(gameObject);
-        
-        
     }
     void Explode()
     {

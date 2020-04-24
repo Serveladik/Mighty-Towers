@@ -14,10 +14,7 @@ public class CameraControl : MonoBehaviour
     
     public float panSensitivity = 10f;
 
-   void Start()
-   {
-       //cameraMain = gameObject.GetComponent<Transform>();
-   }
+   
     void Update()
     {
         if(GameManager.gameOver)

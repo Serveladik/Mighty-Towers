@@ -27,16 +27,13 @@ public class EnemyTarget : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
-        
         this.health-=damage;
         this.healthBar.fillAmount = health/newHealth;
 
         if(health<=0)
-        {
-            
+        { 
             Die();
         }
-
     }
     public void Slow(float slowing)
     {
@@ -51,6 +48,4 @@ public class EnemyTarget : MonoBehaviour
         Destroy(deathFX,2f);
         Destroy(this.enemy);
     }
-   
-    
 }

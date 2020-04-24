@@ -33,14 +33,11 @@ public class TurretAttack : MonoBehaviour
     }
     void Update()
     {
-        
         Shoot();
         LookAtEnemy();
     }
     void SearchTarget()
     {
-        
-
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
         GameObject nearestEnemy=null;
         shortestDistance = Mathf.Infinity;
@@ -52,27 +49,18 @@ public class TurretAttack : MonoBehaviour
             {
                 shortestDistance=distanceToEnemy; 
                 nearestEnemy=enemy;
-                targetEnemy = nearestEnemy.GetComponent<EnemyTarget>();
-                
+                targetEnemy = nearestEnemy.GetComponent<EnemyTarget>();          
             }
         }
         if(nearestEnemy!=null && shortestDistance<=range)
         {
-            
             target=nearestEnemy.transform;
-            
-            //Debug.Log("Attack");
         }
         else
         {
-            
             target=null;
-            
         }
-       
-        
     }
-
    void Shoot()
    {
        if(useLaser==true)
@@ -85,10 +73,8 @@ public class TurretAttack : MonoBehaviour
             {
                 GameObject bulletGO = (GameObject)Instantiate(bulletPrefab,bulletSpawn.position,bulletSpawn.rotation);
                 Bullet bullet = bulletGO.GetComponent<Bullet>();
-
                 audio.clip=shotClip;
                 audio.PlayOneShot(shotClip);
-                
                 if(bullet!=null)
                 {
                     bullet.Seeking(target);
@@ -104,10 +90,8 @@ public class TurretAttack : MonoBehaviour
        {
            timer=0;
        }
-       //if(!lineRenderer.enabled)
        if(target!=null)
        {
-        
         timer-=Time.deltaTime;
         if(timer<=0)
         {
@@ -117,23 +101,14 @@ public class TurretAttack : MonoBehaviour
         }
         targetEnemy.GetComponent<EnemyTarget>().TakeDamage(damageOverTime * Time.deltaTime);
         targetEnemy.Slow(slow);
-        
         lineRenderer.enabled=true;
         laserEffect.Play();
-
         lineRenderer.SetPosition(0,bulletSpawn.position);
         lineRenderer.SetPosition(1,target.position);
-
-        //Vector3 laserDir = bulletSpawn.position - target.position;
-        
         laserEffect.transform.position = target.position;
-        //Debug.Log(timer);
-        //laserEffect.transform.rotation = Quaternion.LookRotation(laserDir);
        }
-        
         else
         {
-            
             lineRenderer.enabled=false;
             laserEffect.Stop();
         }
@@ -149,13 +124,10 @@ public class TurretAttack : MonoBehaviour
         if(target!=null && shortestDistance<=range)
         {
             Vector3 targetPostition = new Vector3(
-                target.position.x, 
-                this.transform.position.y, 
-                target.position.z);
-            //Debug.DrawLine(transform.position,target.transform.position,Color.red,1f);
+            target.position.x, 
+            this.transform.position.y, 
+            target.position.z);
             turret.transform.LookAt(targetPostition);
-            //turret.transform.rotation = Quaternion.RotateTowards(transform.rotation,Quaternion.LookRotation(nearestEnemy.transform.position),Time.deltaTime*rotationSpeed);
         }
-       
     }
 }
