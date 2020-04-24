@@ -13,8 +13,9 @@ public class WaveSpawner : MonoBehaviour
     //private float countdown = 2f;
     private int difficulty=0;
     private float waveTimer=1f;
+    private GameObject[] enemies; 
 
-public Text waveText;
+    public Text waveText;
     void Start()
     {
         gameManager = gameObject.GetComponent<GameManager>();
@@ -37,7 +38,13 @@ public Text waveText;
     {
         if(waveNumber-1==PlayerStats.rounds)
         {
-            gameManager.Completelevel();
+            //find all enemies(if null) complete
+            FindEnemies();
+            if(enemies.Length==0)
+            {
+                gameManager.Completelevel();
+            }
+            
             StopCoroutine(SpawnWave());
         }
         else
@@ -56,7 +63,11 @@ public Text waveText;
         }
     }
  }
-
+ void FindEnemies()
+ {
+    enemies = GameObject.FindGameObjectsWithTag("EnemyZone");
+    //Debug.Log("ENEMY BOOL: " + enemies);
+ }
     IEnumerator SpawnWave()
     {
         PlayerStats.rounds++;

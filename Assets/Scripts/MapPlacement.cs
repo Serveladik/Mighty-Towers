@@ -54,7 +54,6 @@ public class MapPlacement : MonoBehaviour
            //Debug.Log("CANT BUILD HERE!");
            return;
        }
-
        if(buildMechanics.CheckMoney)
        {
            tileRender.material.color = highlightTile;
@@ -63,13 +62,11 @@ public class MapPlacement : MonoBehaviour
        {
            tileRender.material.color = Color.red;
        }
-       
    }
    public void UpgradeTurret()
    {
        if(PlayerStats.money < turretTemplate.upgradePrice)
         {
-           Debug.Log("Not enough money!");
            return;
         }
         else
@@ -119,8 +116,5 @@ public class MapPlacement : MonoBehaviour
            return;
        }
     BuildTurret(buildMechanics.GetTurretToBuild());
-
    }
-
-    
 }

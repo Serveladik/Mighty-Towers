@@ -7,6 +7,7 @@ TagManager:
   - EndBase
   - Enemy
   - Map
+  - EnemyZone
   layers:
   - Default
   - TransparentFX
