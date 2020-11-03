@@ -93,9 +93,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77db1f3504bad994db24cca487aabcd0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 20
+  damage: 25
   speed: 60
-  splashRange: 10
+  splashRange: 11
   hitParticles: {fileID: 7032804561548434443, guid: fef3a92f7b8ff1d4cacaef630194adcc,
     type: 3}
 --- !u!96 &7175295759340634389

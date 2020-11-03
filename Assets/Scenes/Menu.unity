@@ -719,6 +719,11 @@ PrefabInstance:
       propertyPath: audio
       value: 
       objectReference: {fileID: 1325198214}
+    - target: {fileID: 8338644457287439500, guid: 476220f87996e8848b1c1e55bc53fe0c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8338644457513626234, guid: 476220f87996e8848b1c1e55bc53fe0c,
         type: 3}
       propertyPath: mainMenu
@@ -729,6 +734,16 @@ PrefabInstance:
       propertyPath: menuAnim
       value: 
       objectReference: {fileID: 1120809425}
+    - target: {fileID: 8338644457864739542, guid: 476220f87996e8848b1c1e55bc53fe0c,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8338644458219607044, guid: 476220f87996e8848b1c1e55bc53fe0c,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8338644458315844964, guid: 476220f87996e8848b1c1e55bc53fe0c,
         type: 3}
       propertyPath: m_LocalPosition.x

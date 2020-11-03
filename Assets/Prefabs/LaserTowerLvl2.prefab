@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 202377810}
   - component: {fileID: 202377811}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Point Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -103,7 +103,7 @@ GameObject:
   - component: {fileID: 5129296851926752704}
   - component: {fileID: 1701782629497869471}
   - component: {fileID: 4614584156537618629}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: LaserHead
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -183,7 +183,7 @@ GameObject:
   - component: {fileID: 644125279400367394}
   - component: {fileID: 6226988250581886386}
   - component: {fileID: 7355789441050545513}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: LaserhitEffect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5005,7 +5005,7 @@ GameObject:
   - component: {fileID: 6850919687543514455}
   - component: {fileID: 2506089231672812889}
   - component: {fileID: 6720218674305269432}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: LaserStand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5083,7 +5083,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3997249609583080914}
   - component: {fileID: 607909776}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: LaserSpawn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5212,7 +5212,7 @@ GameObject:
   - component: {fileID: 5431913632694689856}
   - component: {fileID: 1485012242679934312}
   - component: {fileID: 1726940319884737996}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Glow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9966,7 +9966,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6096015544219724259}
   - component: {fileID: 1721919284991948199}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: LaserTowerLvl2
   m_TagString: Untagged
   m_Icon: {fileID: 0}

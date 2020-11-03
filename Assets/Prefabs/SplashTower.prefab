@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4908813200149343245}
   - component: {fileID: 4164609542387051523}
   - component: {fileID: 5066483575223613410}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Stand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -89,7 +89,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8527684477831596072}
   - component: {fileID: 7216766641912424799}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -133,7 +133,7 @@ MonoBehaviour:
     type: 3}
   bulletSpawn: {fileID: 2374854359193122727}
   range: 23
-  fireSpeed: 0.5
+  fireSpeed: 0.7
   useLaser: 0
   damageOverTime: 30
   slow: 10
@@ -150,7 +150,7 @@ GameObject:
   - component: {fileID: 4767639173880958219}
   - component: {fileID: 9212217704608862766}
   - component: {fileID: 2460160802663197748}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -227,7 +227,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2374854359193122727}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BulletSpawn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -257,7 +257,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5734671559862083769}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SplashTower
   m_TagString: Untagged
   m_Icon: {fileID: 0}

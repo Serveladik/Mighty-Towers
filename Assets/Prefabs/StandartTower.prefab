@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5708615121491845356}
   - component: {fileID: 5708615121423558784}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: StandartTower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -70,7 +70,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5708615121770104663}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: bulletSpawn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -102,7 +102,7 @@ GameObject:
   - component: {fileID: 5708615122811379331}
   - component: {fileID: 5708615122811379333}
   - component: {fileID: 5708615122811379330}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: pCylinder5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -181,7 +181,7 @@ GameObject:
   - component: {fileID: 5708615122961893539}
   - component: {fileID: 5708615122961893541}
   - component: {fileID: 5708615122961893538}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: pCylinder1
   m_TagString: Untagged
   m_Icon: {fileID: 0}

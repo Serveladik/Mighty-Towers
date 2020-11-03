@@ -108,7 +108,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.8, y: 7}
+  m_AnchoredPosition: {x: -0.8, y: 3.3}
   m_SizeDelta: {x: 5292.7, y: 528.1}
   m_Pivot: {x: 0.50000006, y: 0.5}
 --- !u!222 &8338644456620648775
@@ -214,7 +214,7 @@ RectTransform:
   m_GameObject: {fileID: 8338644457003884757}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 14.196076, y: 5.220676, z: 18.305}
+  m_LocalScale: {x: 15.6156845, y: 6.7519, z: 18.305}
   m_Children:
   - {fileID: 8338644457895794112}
   - {fileID: 8338644456635227968}
@@ -224,7 +224,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -228.99997}
+  m_AnchoredPosition: {x: -9.578, y: -362}
   m_SizeDelta: {x: 160, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &8338644457003884755
@@ -1166,7 +1166,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.8, y: 91.2}
+  m_AnchoredPosition: {x: -0.8, y: 96.6}
   m_SizeDelta: {x: 4615.1, y: 528.1}
   m_Pivot: {x: 0.50000006, y: 0.5}
 --- !u!222 &8338644458450637255
@@ -1313,7 +1313,7 @@ RectTransform:
   m_GameObject: {fileID: 8338644458582442399}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 14.196076, y: 5.220676, z: 18.305}
+  m_LocalScale: {x: 15.6156845, y: 6.7519, z: 18.305}
   m_Children:
   - {fileID: 8338644458262180978}
   - {fileID: 8338644458236361143}
@@ -1323,7 +1323,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -229}
+  m_AnchoredPosition: {x: -9.578, y: -318}
   m_SizeDelta: {x: 160, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &8338644458582442397
